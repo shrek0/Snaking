@@ -49,6 +49,7 @@ public:
     ScreenSize getSizeX() { return x; }
     ScreenSize getSizeY() { return y; }
 
+    void printf(Screen::ScreenPosition x, Screen::ScreenPosition y, const char *format, ...);
     void putchar(CharType charType, Screen::ScreenPosition x, Screen::ScreenPosition y);
     void print(const PrintableObject &object);
 

@@ -26,6 +26,7 @@
 #include "screen.h"
 
 #include <ncurses.h>
+#include <cstdarg>
 
 #include <iostream>
 
@@ -50,6 +51,19 @@ void Screen::clear()
 void Screen::refresh()
 {
     ::refresh();
+}
+
+void Screen::printf(Screen::ScreenPosition x, Screen::ScreenPosition y, const char *format, ...) {
+    va_list args;
+
+    ::move(y , x);
+
+    va_start(args, format);
+    vw_printw(stdscr, format, args);
+    va_end(args);
+
+
+//    ::move(y, x, format, __VA_ARGS__);
 }
 
 void Screen::putchar(CharType charType, Screen::ScreenPosition x, Screen::ScreenPosition y)

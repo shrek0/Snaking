@@ -28,7 +28,6 @@
 
 #include "screen.h"
 #include "boardobject.h"
-#include "multiplelinesboardobject.h"
 
 #include <unordered_map>
 

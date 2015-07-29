@@ -37,13 +37,18 @@ int main(int argc, char *argv[]) {
     Board board(screen);
     Snake snake(board);
     Keyboard keyboard;
-    Food food(12,
-              14);
+    Food food(static_cast<Point::PointPosition>(rand()) % board.getX(),
+              static_cast<Point::PointPosition>(rand()) % board.getY());
 
     snake.move(Snake::Right);
 
+    uint32_t points = 0;
+
     while(true) {
         board.clear();
+
+        screen.printf(3, 0, "%u", points);
+
         board.setBoardObject(food);
         board.setBoardObject(snake);
         board.render();
@@ -97,6 +102,8 @@ int main(int argc, char *argv[]) {
             snake.grow();
             food = Food(static_cast<Point::PointPosition>(rand()) % board.getX(),
                         static_cast<Point::PointPosition>(rand()) % board.getY());
+
+            ++points;
         }
 
         usleep(10000);

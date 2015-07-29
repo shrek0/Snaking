@@ -41,7 +41,7 @@ public:
 
     bool isWaitingChar() { return bIsWaitingChar; }
 
-    int getchar() { int c = getch(); bIsWaitingChar=false; return c; };
+    int getchar() { int c = getch(); bIsWaitingChar=false; return c; }
 
     enum Direction{
         Up = KEY_UP,

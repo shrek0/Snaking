@@ -9,7 +9,6 @@ SOURCES += \
     food.cpp \
     printableobject.cpp \
     boardobject.cpp \
-    multiplelinesboardobject.cpp \
     point.cpp \
     character.cpp \
     stringfunctions.cpp \
@@ -22,7 +21,6 @@ HEADERS += \
     food.h \
     printableobject.h \
     boardobject.h \
-    multiplelinesboardobject.h \
     point.h \
     character.h \
     stringfunctions.h \
